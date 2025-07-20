@@ -32,17 +32,17 @@ const SignupForm = () => {
   // Success state UI
   if (success) {
     return (
-      <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 mb-4">
-          <CheckCircle2 className="h-6 w-6 text-green-600" />
+      <div className="card-modern rounded-2xl shadow-xl p-8 text-center animate-bounce-in">
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 mb-4 animate-scale-in" style={{ animationDelay: '0.2s' }}>
+          <CheckCircle2 className="h-6 w-6 text-green-600 icon-bounce" />
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">You&apos;re all set!</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-2 text-shadow-soft">You&apos;re all set!</h3>
         <p className="text-gray-600 mb-6">
           Thanks for signing up. We&apos;ll send you your first newsletter soon.
         </p>
         <button
           onClick={resetForm}
-          className="text-sm text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+          className="text-sm text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded hover-brightness transition-all duration-200"
         >
           Sign up another email
         </button>
@@ -51,9 +51,9 @@ const SignupForm = () => {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8">
+    <div className="card-modern rounded-2xl shadow-xl p-8 hover-lift">
       <div className="mb-8">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+        <h3 className="text-2xl font-bold text-gray-900 mb-2 text-shadow-soft">
           Start Your Coding Journey
         </h3>
         <p className="text-gray-600">
@@ -90,7 +90,7 @@ const SignupForm = () => {
         />
         
         <Checkbox
-          label="Send me weekly coding tips and tutorials"
+          label="Subscribe for upcoming updates and newsletter"
           checked={formData.newsletter_subscribed}
           onChange={handleChange('newsletter_subscribed')}
           disabled={loading}
@@ -114,7 +114,7 @@ const SignupForm = () => {
           loading={loading}
           disabled={loading || (touched.name && !!errors.name) || (touched.email && !!errors.email)}
         >
-          {loading ? 'Creating your account...' : 'Get Started Free'}
+          {loading ? 'Creating your account...' : 'Join the Waitlist'}
         </Button>
         
         <p className="text-xs text-center text-gray-500">

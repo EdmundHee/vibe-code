@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, forwardRef } from 'react'
+import { ButtonHTMLAttributes, forwardRef, memo } from 'react'
 import { cn } from '@/lib/utils'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,9 +12,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = 'inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 rounded-lg'
     
     const variants = {
-      primary: 'bg-primary text-white hover:bg-primary/90 focus-visible:ring-primary',
+      primary: 'bg-primary text-white hover:bg-primary/90 focus-visible:ring-primary btn-primary',
       secondary: 'bg-secondary text-white hover:bg-secondary/90 focus-visible:ring-secondary',
-      outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white focus-visible:ring-primary'
+      outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white focus-visible:ring-primary hover-lift'
     }
     
     const sizes = {
@@ -67,4 +67,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.displayName = 'Button'
 
-export default Button
+export default memo(Button)

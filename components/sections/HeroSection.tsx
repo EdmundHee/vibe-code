@@ -5,10 +5,11 @@ import { Rocket, CheckCircle } from 'lucide-react'
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
-      {/* Background decorations */}
+      {/* Enhanced background decorations */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
-      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl animate-pulse-soft animate-float" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary/3 to-accent/3 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '2s' }} />
       
       <div className="relative">
         {/* Container with responsive padding and max-width */}
@@ -18,23 +19,23 @@ const HeroSection = () => {
             
             {/* Left Content - Hero Text */}
             <div className="space-y-6 md:space-y-8 text-center lg:text-left">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium animate-fade-in">
-                <Rocket className="h-4 w-4" />
+              {/* Enhanced badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium animate-fade-in hover-glow cursor-default card-modern">
+                <Rocket className="h-4 w-4 icon-bounce" />
                 Launch Your MVP in 30 Days
               </div>
               
               {/* Main Heading */}
               <div className="space-y-4 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight responsive-text text-shadow-soft">
                   Master{' '}
-                  <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  <span className="gradient-text text-shadow-glow">
                     Full-Stack Development
                   </span>
                   {' '}with Vibe Coding
                 </h1>
                 
-                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 responsive-subtitle">
                   Launch your MVP in 30 days with our intensive, project-based course. 
                   From concept to deployment.
                 </p>
@@ -42,22 +43,22 @@ const HeroSection = () => {
               
               {/* Feature List */}
               <div className="space-y-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                <div className="flex items-start gap-3 justify-center lg:justify-start">
-                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                <div className="flex items-start gap-3 justify-center lg:justify-start hover-scale">
+                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0 icon-pulse" />
                   <p className="text-gray-700">
                     <strong>Project-Based Learning:</strong> Build real applications, not toy projects
                   </p>
                 </div>
                 
-                <div className="flex items-start gap-3 justify-center lg:justify-start">
-                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                <div className="flex items-start gap-3 justify-center lg:justify-start hover-scale" style={{ animationDelay: '0.1s' }}>
+                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0 icon-pulse" style={{ animationDelay: '0.5s' }} />
                   <p className="text-gray-700">
                     <strong>AI-Powered Guidance:</strong> Get unstuck instantly with personalized help
                   </p>
                 </div>
                 
-                <div className="flex items-start gap-3 justify-center lg:justify-start">
-                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                <div className="flex items-start gap-3 justify-center lg:justify-start hover-scale" style={{ animationDelay: '0.2s' }}>
+                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0 icon-pulse" style={{ animationDelay: '1s' }} />
                   <p className="text-gray-700">
                     <strong>Deploy to Production:</strong> Learn DevOps and launch your app live
                   </p>
@@ -97,7 +98,7 @@ const HeroSection = () => {
             </div>
             
             {/* Right Content - Form */}
-            <div className="w-full max-w-md mx-auto lg:mx-0 lg:max-w-none animate-scale-in" style={{ animationDelay: '0.3s' }}>
+            <div className="w-full max-w-md mx-auto lg:mx-0 lg:max-w-none animate-scale-in hover-lift" style={{ animationDelay: '0.3s' }}>
               <ErrorBoundary>
                 <SignupForm />
               </ErrorBoundary>
