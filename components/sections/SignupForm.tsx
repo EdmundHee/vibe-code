@@ -36,9 +36,9 @@ const SignupForm = () => {
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 mb-4">
           <CheckCircle2 className="h-6 w-6 text-green-600" />
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">You're all set!</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-2">You&apos;re all set!</h3>
         <p className="text-gray-600 mb-6">
-          Thanks for signing up. We'll send you your first newsletter soon.
+          Thanks for signing up. We&apos;ll send you your first newsletter soon.
         </p>
         <button
           onClick={resetForm}

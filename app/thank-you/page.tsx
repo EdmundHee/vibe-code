@@ -24,7 +24,7 @@ export default function ThankYouPage() {
           </h1>
           
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            You've successfully joined our community of learners. Check your email 
+            You&apos;ve successfully joined our community of learners. Check your email 
             for a confirmation message and get ready to start your coding journey.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function ThankYouPage() {
               <div>
                 <h3 className="font-semibold text-gray-900">Check your inbox</h3>
                 <p className="text-gray-600 mt-1">
-                  We've sent you a welcome email with your first lesson and resources 
+                  We&apos;ve sent you a welcome email with your first lesson and resources 
                   to get started.
                 </p>
               </div>
@@ -55,7 +55,7 @@ export default function ThankYouPage() {
               <div>
                 <h3 className="font-semibold text-gray-900">Weekly newsletters</h3>
                 <p className="text-gray-600 mt-1">
-                  Every week, you'll receive carefully crafted lessons, coding tips, 
+                  Every week, you&apos;ll receive carefully crafted lessons, coding tips, 
                   and AI-powered insights.
                 </p>
               </div>
@@ -104,7 +104,7 @@ export default function ThankYouPage() {
         
         <div className="text-center">
           <p className="text-gray-600 mb-4">
-            Didn't receive our email? Check your spam folder or
+            Didn&apos;t receive our email? Check your spam folder or
           </p>
           <Button variant="outline" size="md">
             Resend confirmation email

@@ -1,9 +1,9 @@
 import { useState, useCallback, useEffect } from 'react'
-import { validateEmail, validateName } from '@/lib/validation'
+import { validateEmail } from '@/lib/validation'
 import { SignupFormData, ApiResponse } from '@/types'
 
 interface UseSignupFormProps {
-  onSuccess?: (data: any) => void
+  onSuccess?: (data: unknown) => void
   onError?: (error: string) => void
 }
 
@@ -23,7 +23,7 @@ interface UseSignupFormReturn {
   handleBlur: (field: keyof SignupFormData) => () => void
   handleSubmit: (e: React.FormEvent) => Promise<void>
   resetForm: () => void
-  validateField: (field: keyof SignupFormData, value: any) => string | undefined
+  validateField: (field: keyof SignupFormData, value: unknown) => string | undefined
 }
 
 const INITIAL_FORM_DATA: SignupFormData = {
@@ -49,7 +49,7 @@ export function useSignupForm({
   const [success, setSuccess] = useState(false)
 
   // Validate individual field
-  const validateField = useCallback((field: keyof SignupFormData, value: any): string | undefined => {
+  const validateField = useCallback((field: keyof SignupFormData, value: unknown): string | undefined => {
     switch (field) {
       case 'name':
         if (!value || typeof value !== 'string') {
@@ -174,7 +174,7 @@ export function useSignupForm({
       setTimeout(() => {
         resetForm()
       }, 3000)
-    } catch (error) {
+    } catch {
       const errorMessage = 'Network error. Please check your connection and try again.'
       setErrors({ general: errorMessage })
       onError?.(errorMessage)

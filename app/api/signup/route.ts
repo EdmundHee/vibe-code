@@ -26,14 +26,14 @@ export async function POST(request: NextRequest) {
 
   try {
     // Get client information
-    const headersList = headers()
+    const headersList = await headers()
     const userAgent = headersList.get('user-agent') || 'Unknown'
     const referer = headersList.get('referer') || null
     const forwardedFor = headersList.get('x-forwarded-for')
     const realIp = headersList.get('x-real-ip')
     
     // Determine client IP
-    const clientIp = forwardedFor?.split(',')[0] || realIp || request.ip || 'Unknown'
+    const clientIp = forwardedFor?.split(',')[0] || realIp || 'Unknown'
 
     // Rate limiting check
     const rateLimitResult = await checkRateLimit(clientIp)
@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if email already exists
-    const { data: existingUser, error: checkError } = await supabase
+    const { data: existingUser } = await supabase
       .from('vibe_coding_signups')
       .select('id')
       .eq('email', signupData.email)

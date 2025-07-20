@@ -1,4 +1,3 @@
-import { SignupFormData } from '@/types'
 
 export function validateEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -9,23 +8,24 @@ export function validateName(name: string): boolean {
   return name.trim().length >= 2 && name.trim().length <= 100
 }
 
-export function validateSignupData(data: any): { valid: boolean; errors: string[] } {
+export function validateSignupData(data: unknown): { valid: boolean; errors: string[] } {
   const errors: string[] = []
+  const formData = data as Record<string, unknown>
 
-  if (!data.name || typeof data.name !== 'string') {
+  if (!formData.name || typeof formData.name !== 'string') {
     errors.push('Name is required')
-  } else if (!validateName(data.name)) {
+  } else if (!validateName(formData.name)) {
     errors.push('Name must be between 2 and 100 characters')
   }
 
-  if (!data.email || typeof data.email !== 'string') {
+  if (!formData.email || typeof formData.email !== 'string') {
     errors.push('Email is required')
-  } else if (!validateEmail(data.email)) {
+  } else if (!validateEmail(formData.email)) {
     errors.push('Invalid email format')
   }
 
-  if (typeof data.newsletter_subscribed !== 'boolean') {
-    data.newsletter_subscribed = false
+  if (typeof formData.newsletter_subscribed !== 'boolean') {
+    formData.newsletter_subscribed = false
   }
 
   return {
